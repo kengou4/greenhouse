@@ -38,9 +38,10 @@ jobs:
     steps:
       - name: Install Hugo CLI
         run: |
-# ONLY for self-hosted runners
+          # Only for self-hosted runners
           sudo apt-get update && sudo apt-get install -y wget
-#
+          # END Only for self-hosted runners
+          # arm64 for self-hosted runners
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-arm64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       
