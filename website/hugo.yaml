@@ -24,11 +24,11 @@ params:
       icon: "fa-solid fa-book"
       links:
         - label: "Value propositions"
-          path: "/docs/getting-started/overview/#value-propositions"
+          path: "docs/getting-started/overview/#value-propositions"
         - label: "High-level architecture"
-          path: "/docs/architecture/high-level"
+          path: "docs/architecture/high-level"
         - label: "Product design"
-          path: "/docs/architecture/product_design"
+          path: "docs/architecture/product_design"
 
     - label: "Community"
       icon: "fa-solid fa-users"
