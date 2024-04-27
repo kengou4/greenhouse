@@ -16,7 +16,7 @@ params:
         - label: "Dashboard"
           path: "https://dashboard.greenhouse.global.cloud.sap"
         - label: "Roadmap"
-          path: "https://github.com/cloudoperators/greenhouse/projects/2"
+          path: "https://github.com/orgs/cloudoperators/projects/1"
         - label: "Plugin catalog"
           path: "https://github.com/cloudoperators/greenhouse-extensions"
 
