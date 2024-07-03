@@ -30,7 +30,7 @@ defaults:
 
 jobs:
   build:
-    runs-on: [ default ]
+    runs-on: [ oci-runner ]
 
     env:
       HUGO_VERSION: 0.124.1
