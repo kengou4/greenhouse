@@ -30,7 +30,7 @@ defaults:
 
 jobs:
   build:
-    runs-on: [ oci-runner ]
+    runs-on: [ exit ]
 
     env:
       HUGO_VERSION: 0.124.1
@@ -119,7 +119,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: [ oci-runner ]
+    runs-on: [ exit ]
     needs: build
     steps:
       - name: Deploy to GitHub Pages
