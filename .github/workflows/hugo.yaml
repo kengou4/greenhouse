@@ -119,7 +119,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: [ default ]
+    runs-on: [ oci-runner ]
     needs: build
     steps:
       - name: Deploy to GitHub Pages
