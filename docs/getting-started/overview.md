@@ -5,11 +5,7 @@ weight: 1
 
 ## What is Greenhouse?
 
-<a href="https://github.com/cloudoperators/greenhouse"><img align="left" width="150" height="170" src="../greenhouse.svg"></a>
-
-<img align="left" width="150" height="170" src="../greenhouse.svg" />
-
-![](../greenhouse.svg =150x170)
+![](../greenhouse.svg)
 
 Greenhouse is a cloud operations platform designed to streamline and simplify the management of a large-scale, distributed infrastructure.  
 
