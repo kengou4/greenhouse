@@ -24,4 +24,4 @@ The [Roadmap Kanban board](https://github.com/orgs/cloudoperators/projects/1) pr
 
 ## Architecture & Design
 
-The [Greenhouse design and architecture document](docs/design/product_design.md) describes the various use-cases and user stories.
+The [Greenhouse design and architecture document](docs/architecture/product_design.md) describes the various use-cases and user stories.
