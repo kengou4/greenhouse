@@ -113,11 +113,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./greenhouse/website/public/
-
-      - name: Upload artifact2
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public/
   
   # Deployment job
   deploy:
