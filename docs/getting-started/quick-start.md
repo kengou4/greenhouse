@@ -30,4 +30,4 @@ Prerequisites:
 ## Already a member
 
 You're a **member of an existing organization** and want to manage your teams, clusters or plugins?  
-Please refer to the [user guides](../../docs/user-guides) to find out more.
+Please refer to the [user guides](../../user-guides) to find out more.
