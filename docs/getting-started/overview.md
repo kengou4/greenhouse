@@ -5,7 +5,7 @@ weight: 1
 
 ## What is Greenhouse?
 
-![](../greenhouse.svg) 
+![](/greenhouse/assets/greenhouse.svg) 
 
 Greenhouse is a cloud operations platform designed to streamline and simplify the management of a large-scale, distributed infrastructure.  
 
