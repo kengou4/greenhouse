@@ -26,13 +26,13 @@ require (
 	github.com/onsi/ginkgo/v2 v2.20.1
 	github.com/onsi/gomega v1.34.1
 	github.com/pkg/errors v0.9.1
-	github.com/prometheus/client_golang v1.20.1
+	github.com/prometheus/client_golang v1.20.4
 	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/pflag v1.0.5
 	github.com/wI2L/jsondiff v0.6.0
 	go.uber.org/zap v1.27.0
-	golang.org/x/text v0.17.0
+	golang.org/x/text v0.18.0
 	gopkg.in/yaml.v3 v3.0.1
 	gotest.tools/v3 v3.5.1
 	helm.sh/helm/v3 v3.15.4
@@ -184,7 +184,7 @@ require (
 	github.com/otiai10/copy v1.14.0
 	github.com/peterbourgon/diskv v2.0.1+incompatible // indirect
 	github.com/prometheus/client_model v0.6.1 // indirect
-	github.com/prometheus/common v0.55.0
+	github.com/prometheus/common v0.60.1
 	github.com/prometheus/procfs v0.15.1 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
 	github.com/rubenv/sql-migrate v1.5.2 // indirect
@@ -202,13 +202,13 @@ require (
 	go.opentelemetry.io/otel/trace v1.24.0 // indirect
 	go.starlark.net v0.0.0-20230612165344-9532f5667272 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	golang.org/x/crypto v0.26.0 // indirect
+	golang.org/x/crypto v0.27.0 // indirect
 	golang.org/x/exp v0.0.0-20240719175910-8a7402abbf56 // indirect
-	golang.org/x/net v0.28.0 // indirect
-	golang.org/x/oauth2 v0.21.0 // indirect
+	golang.org/x/net v0.29.0 // indirect
+	golang.org/x/oauth2 v0.23.0 // indirect
 	golang.org/x/sync v0.8.0 // indirect
-	golang.org/x/sys v0.23.0 // indirect
-	golang.org/x/term v0.23.0 // indirect
+	golang.org/x/sys v0.25.0 // indirect
+	golang.org/x/term v0.24.0 // indirect
 	golang.org/x/time v0.6.0
 	golang.org/x/tools v0.24.0 // indirect
 	gomodules.xyz/jsonpatch/v2 v2.4.0 // indirect
