@@ -17,6 +17,6 @@
         "target": "dependency"
       }
     ],
-    "template": "#{{CHANGELOG}}\n\n## 🚀What's Changed\n#{{UNCATEGORIZED}}\n\n**Full Changelog**: #{{RELEASE_DIFF}}",
+    "template": "## 🚀What's Changed\n#{{UNCATEGORIZED}}\n\n#{{CHANGELOG}}\n\n**Full Changelog**: #{{RELEASE_DIFF}}",
     "pr_template": "- #{{TITLE}} by @#{{AUTHOR}} in: ##{{NUMBER}}"
 }
