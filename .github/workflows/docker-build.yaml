@@ -13,8 +13,8 @@ on:
         - Dockerfile.*
         - go.mod
         - go.sum
-    tags:
-      - v*.*.*
+#    tags:
+#      - v*.*.*
     
 env:
   REGISTRY: ghcr.io
