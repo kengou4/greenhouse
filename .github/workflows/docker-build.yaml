@@ -33,12 +33,8 @@ jobs:
             Imagename: greenhouse
           - Dockerfiles: Dockerfile.dev-env
             Imagename: greenhouse-dev-env
-          - Dockerfiles: Dockerfile.headscalectl
-            Imagename: greenhouse-headscalectl
-          - Dockerfiles: Dockerfile.tailscale
-            Imagename: greenhouse-tailscale
-          - Dockerfiles: Dockerfile.tcp-proxy
-            Imagename: greenhouse-tcp-proxy
+          # - Dockerfiles: Dockerfile.dev-ui
+          #   Imagename: greenhouse-dev-ui
 
     permissions:
       contents: read
@@ -112,9 +108,10 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          # remove untagged images produced for multi platform builds
+          provenance: false
         #  cache-from: type=gha
         #  cache-to: type=gha,mode=max
-          provenance: false
           platforms: |
             linux/amd64
             linux/arm64
@@ -148,29 +145,34 @@ jobs:
             Imagename: greenhouse
           - Dockerfiles: Dockerfile.dev-env
             Imagename: greenhouse-dev-env
-          - Dockerfiles: Dockerfile.headscalectl
-            Imagename: greenhouse-headscalectl
-          - Dockerfiles: Dockerfile.tailscale
-            Imagename: greenhouse-tailscale
-          - Dockerfiles: Dockerfile.tcp-proxy
-            Imagename: greenhouse-tcp-proxy
+          # - Dockerfiles: Dockerfile.dev-ui
+          #   Imagename: greenhouse-dev-ui
 
     name: Vulnerability Scan
     needs: build
     runs-on: [ ubuntu-latest ]
     steps:
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@0.29.0
         if: success()
         with:
           image-ref: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ matrix.Imagename }}:${{ github.sha }}
           ignore-unfixed: true
-          format: 'sarif'
-          output: 'trivy-results.sarif'
-          severity: 'CRITICAL,HIGH'
+          format: 'json'
+          output: 'trivy-results.json'
+          severity: 'CRITICAL,HIGH,MEDIUM'
+      
+      - name: Convert to SARIF
+        if: always()
+        run: |
+          trivy convert --format=sarif --output="trivy-results.sarif" "trivy-results.json"
 
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v3
         if: always()
         with:
           sarif_file: trivy-results.sarif
+      
+      - name: View readable report
+        run: |
+          trivy convert --format=table trivy-results.json
