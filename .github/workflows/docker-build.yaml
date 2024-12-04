@@ -158,7 +158,7 @@ jobs:
         with:
           image-ref: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ matrix.Imagename }}:${{ github.sha }}
           ignore-unfixed: true
-          format: 'json'
+          format: 'sarif'
           output: 'trivy-results.sarif'
           severity: 'CRITICAL,HIGH,MEDIUM'
 
