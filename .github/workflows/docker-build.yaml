@@ -153,6 +153,7 @@ jobs:
     runs-on: [ ubuntu-latest ]
     steps:
       - name: Run Trivy vulnerability scanner
+        id: scan
         uses: aquasecurity/trivy-action@0.29.0
         if: success()
         with:
@@ -161,6 +162,11 @@ jobs:
           format: 'json'
           output: 'trivy-results.json'
           severity: 'CRITICAL,HIGH,MEDIUM'
+      
+      - name: View readable report
+        if: always()
+        run: |
+          trivy convert --format=table trivy-results.json
       
       - name: Convert to SARIF
         if: always()
@@ -172,7 +178,3 @@ jobs:
         if: always()
         with:
           sarif_file: trivy-results.sarif
-      
-      - name: View readable report
-        run: |
-          trivy convert --format=table trivy-results.json
