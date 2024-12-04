@@ -173,6 +173,7 @@ jobs:
         if: always()
         with:
           image-ref: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ matrix.Imagename }}:${{ github.sha }}
+          format: 'table'
           ignore-unfixed: true
           severity: 'CRITICAL,HIGH,MEDIUM'
           skip-setup-trivy: true
