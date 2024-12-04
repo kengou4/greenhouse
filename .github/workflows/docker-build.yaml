@@ -173,6 +173,9 @@ jobs:
       - name: Trivy vulnerability scanner (table output)
         id: table-trivy
         uses: aquasecurity/trivy-action@0.29.0
+        env:
+          TRIVY_SKIP_DB_UPDATE: true
+          TRIVY_SKIP_JAVA_DB_UPDATE: true
         with:
           image-ref: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ matrix.Imagename }}:${{ github.sha }}
           format: 'table'
