@@ -153,6 +153,7 @@ jobs:
     runs-on: [ ubuntu-latest ]
     steps:
       - name: Run Trivy vulnerability scanner
+        id: sarif-trivy
         uses: aquasecurity/trivy-action@0.29.0
         if: success()
         with:
@@ -163,14 +164,15 @@ jobs:
           severity: 'CRITICAL,HIGH,MEDIUM'
 
       - name: Upload Trivy scan results to GitHub Security tab
+        id: upload
         uses: github/codeql-action/upload-sarif@v3
         if: always()
         with:
           sarif_file: trivy-results.sarif
 
-      - name: Run Trivy vulnerability scanner
+      - name: Trivy vulnerability scanner (table output)
+        id: table-trivy
         uses: aquasecurity/trivy-action@0.29.0
-        if: always()
         with:
           image-ref: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ matrix.Imagename }}:${{ github.sha }}
           format: 'table'
