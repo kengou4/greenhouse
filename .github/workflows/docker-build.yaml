@@ -170,6 +170,7 @@ jobs:
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.29.0
+        if: always()
         with:
           image-ref: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ matrix.Imagename }}:${{ github.sha }}
           ignore-unfixed: true
