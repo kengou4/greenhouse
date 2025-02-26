@@ -13,16 +13,14 @@
     ],
     "customManagers": [
       {
-        "description": "Bump kustomize version in the Makefile",
+        "description": "Bump flux kustomize version",
         "fileMatch": [
-          "^Makefile$"
+          "(?:^|flux/.*/)kustomization\\.ya?ml$"
         ],
         "matchStrings": [
-          "KUSTOMIZE_VERSION .= (?<currentValue>v.*)"
+          "github.com.(?<packageName>.*).releases.download.(?<currentValue>.*)/"
         ],
-        "datasourceTemplate": "github-releases",
-        "depNameTemplate": "kubernetes-sigs/kustomize",
-        "extractVersionTemplate": "^kustomize/v(?<version>.*?)$"
+        "datasourceTemplate": "github-releases"
        }
     ],
     "packageRules": [
