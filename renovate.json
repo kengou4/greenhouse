@@ -20,7 +20,7 @@
         "matchStrings": [
           "github.com.(?<packageName>.*).releases.download.(?<currentValue>.*)/"
         ],
-        "datasourceTemplate": "github-releases"
+        "datasourceTemplate": "github-tags"
        }
     ],
     "packageRules": [
