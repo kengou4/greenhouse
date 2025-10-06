@@ -214,7 +214,7 @@ require (
 	gomodules.xyz/jsonpatch/v2 v2.4.0 // indirect
 	google.golang.org/api v0.190.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240730163845-b1a4ccb954bf // indirect
-	google.golang.org/grpc v1.65.0
+	google.golang.org/grpc v1.76.0
 	google.golang.org/protobuf v1.34.2
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
